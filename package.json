@@ -1,0 +1,36 @@
+{
+	"name": "monitor-hafas-cli",
+	"description": "Monitor any HAFAS endpoint from the command line.",
+	"version": "1.0.0",
+	"bin": {
+		"monitor-hafas": "./bin.js"
+	},
+	"files": [
+		"bin.js",
+		"lib"
+	],
+	"keywords": [
+		"hafas",
+		"public",
+		"transport",
+		"transit",
+		"monitor",
+		"record",
+		"command line",
+		"cli"
+	],
+	"author": "Jannis R <mail@jannisr.de>",
+	"homepage": "https://github.com/derhuerst/monitor-hafas-cli",
+	"repository": "derhuerst/monitor-hafas-cli",
+	"bugs": "https://github.com/derhuerst/monitor-hafas-cli/issues",
+	"license": "ISC",
+	"engines": {
+		"node": ">=10"
+	},
+	"dependencies": {
+	},
+	"peerDependencies": {
+	},
+	"devDependencies": {
+	}
+}
