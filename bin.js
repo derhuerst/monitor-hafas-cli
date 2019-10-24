@@ -18,10 +18,10 @@ if (argv.help || argv.h) {
 Monitoring stations:
 	monitor-hafas <hafas-client> <list of events> stations <list of stations>
 	monitor-hafas <hafas-client> <list of events> stations --file <file with stations>
-	available events: departure, stopover, stats
+	available events: departure, stopover
 Monitoring trips in a bounding box:
 	monitor-hafas <hafas-client> <list of events> bbox <north> <west> <south> <east>
-	available events: trip, new-trip, trip-obsolete, stopover, position, stats
+	available events: trip, new-trip, trip-obsolete, stopover, position
 Options:
 	--file          -f  Read the list of stations from a JSON file.
 	--pretty-print  -f  Pretty print data instead of JSON.
@@ -44,6 +44,7 @@ const {inspect} = require('util')
 const createStationsMonitor = require('hafas-monitor-departures')
 const createBboxMonitor = require('hafas-monitor-trips')
 const supportsColor = require('supports-color')
+const {isatty} = require('tty')
 
 const showError = (err) => {
 	console.error(err)
@@ -94,7 +95,14 @@ if (argv['pretty-print'] || argv.p) {
 	}
 }
 
-// todo: report stats to stderr?
 events.forEach((eventName) => {
 	monitor.on(eventName, formatter(eventName))
 })
+
+if (
+	!events.includes('stats') &&
+	isatty(process.stderr.fd) &&
+	!isatty(process.stdout.fd)
+) {
+	monitor.on('stats', console.error)
+}
