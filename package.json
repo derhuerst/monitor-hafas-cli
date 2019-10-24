@@ -28,8 +28,14 @@
 		"node": ">=10"
 	},
 	"dependencies": {
+		"hafas-monitor-departures": "github:derhuerst/hafas-monitor-departures#next",
+		"hafas-monitor-trips": "^2.1.2",
+		"mri": "^1.1.4",
+		"resolve-from": "^5.0.0",
+		"supports-color": "^7.1.0"
 	},
 	"peerDependencies": {
+		"hafas-client": "^4.0.0"
 	},
 	"devDependencies": {
 	}
