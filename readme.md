@@ -48,7 +48,7 @@ npm install monitor-hafas-cli
 
 ## Usage
 
-```shell
+```
 Monitoring stations:
 	monitor-hafas <hafas-client> <list of events> stations <list of stations>
 	monitor-hafas <hafas-client> <list of events> stations --file <file with stations>

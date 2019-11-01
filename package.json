@@ -29,7 +29,7 @@
 		"node": ">=10"
 	},
 	"dependencies": {
-		"hafas-monitor-departures": "github:derhuerst/hafas-monitor-departures#next",
+		"hafas-monitor-departures": "github:derhuerst/hafas-monitor-departures",
 		"hafas-monitor-trips": "^2.1.2",
 		"mri": "^1.1.4",
 		"resolve-from": "^5.0.0",
