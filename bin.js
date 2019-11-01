@@ -85,7 +85,7 @@ if (mode === 'stations') {
 } else showError('Invalid mode. Must be "stations" or "bbox".')
 
 let formatter = eventName => val => {
-	process.stdout.write(JSON.stringify([eventName, val]))
+	process.stdout.write(JSON.stringify([eventName, val]) + '\n')
 }
 if (argv['pretty-print'] || argv.p) {
 	const colors = supportsColor.stdout
