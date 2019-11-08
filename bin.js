@@ -9,7 +9,8 @@ const argv = mri(process.argv.slice(2), {
 		'help', 'h',
 		'version', 'v',
 		'file', 'f',
-		'pretty-print', 'p'
+		'pretty-print', 'p',
+		'show-stats', 's'
 	]
 })
 
@@ -26,6 +27,7 @@ Options:
 	--file          -f  Read the list of stations from a JSON file.
 	--pretty-print  -f  Pretty print data instead of JSON.
 	--interval      -i  Query interval in seconds. Default: 30
+	--show-stats    -s  Always show request stats.
 Examples:
 	monitor-hafas bvg-hafas departure stations 900000100001,900000100003
 	monitor-hafas ./my-hafas-client.js departure,stopover stations --file stations.json
@@ -100,9 +102,11 @@ events.forEach((eventName) => {
 })
 
 if (
-	!events.includes('stats') &&
-	isatty(process.stderr.fd) &&
-	!isatty(process.stdout.fd)
+	(argv['show-stats'] || argv.s) || (
+		!events.includes('stats') &&
+		isatty(process.stderr.fd) &&
+		!isatty(process.stdout.fd)
+	)
 ) {
 	monitor.on('stats', console.error)
 }
