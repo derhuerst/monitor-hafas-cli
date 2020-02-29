@@ -2,6 +2,7 @@
 'use strict'
 
 const mri = require('mri')
+const semverMajor = require('semver/functions/major')
 const pkg = require('./package.json')
 
 const argv = mri(process.argv.slice(2), {
@@ -86,8 +87,9 @@ if (mode === 'stations') {
 	}, interval)
 } else showError('Invalid mode. Must be "stations" or "bbox".')
 
+const DATA_VERSION = semverMajor(pkg.version)
 let formatter = eventName => val => {
-	process.stdout.write(JSON.stringify([eventName, val, Date.now()]) + '\n')
+	process.stdout.write(JSON.stringify([eventName, val, Date.now(), DATA_VERSION]) + '\n')
 }
 if (argv['pretty-print'] || argv.p) {
 	const colors = supportsColor.stdout
