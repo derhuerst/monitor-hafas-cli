@@ -20,18 +20,18 @@ Or use [`npx`](https://npmjs.com/package/npx). ✨
 
 ## Getting started
 
-As an example, we're going to monitor the [BVG](https://en.wikipedia.org/wiki/Berliner_Verkehrsbetriebe) HAFAS endpoint, using [`bvg-hafas`](https://npmjs.com/package/bvg-hafas).
+As an example, we're going to monitor the [VBB](https://en.wikipedia.org/wiki/Verkehrsverbund_Berlin-Brandenburg) HAFAS endpoint, using [`vbb-hafas@7`](https://npmjs.com/package/vbb-hafas/tree/7).
 
 ```shell
 # make an empty project to play around
-mkdir bvg-monitoring
-cd bvg-monitoring
+mkdir vbb-monitoring
+cd vbb-monitoring
 npm init --yes
 
 # set up HAFAS client
-npm install bvg-hafas
-echo 'const createHafas = require("bvg-hafas")' >>hafas.js
-echo 'const hafas = createHafas("bvg monitoring example")' >>hafas.js
+npm install vbb-hafas@7
+echo 'const createHafas = require("vbb-hafas")' >>hafas.js
+echo 'const hafas = createHafas("vbb monitoring example")' >>hafas.js
 echo 'module.exports = hafas' >>hafas.js
 
 # set up monitoring
@@ -62,7 +62,7 @@ Options:
 	--interval      -i  Query interval in seconds. Default: 30
 	--show-stats    -s  Always show request stats.
 Examples:
-	monitor-hafas bvg-hafas departure stations 900000100001,900000100003
+	monitor-hafas vbb-hafas departure stations 900000100001,900000100003
 	monitor-hafas ./my-hafas-client.js departure,stopover stations --file stations.json
 	monitor-hafas some-package/my-hafas-client.js stopover,position bbox 52.6 13.3 52.3 13.6
 ```

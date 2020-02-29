@@ -29,17 +29,17 @@
 		"node": ">=10"
 	},
 	"dependencies": {
-		"hafas-monitor-departures": "github:derhuerst/hafas-monitor-departures",
-		"hafas-monitor-trips": "^2.1.2",
+		"hafas-monitor-departures": "^4.0.0",
+		"hafas-monitor-trips": "^3.0.0",
 		"mri": "^1.1.4",
 		"resolve-from": "^5.0.0",
 		"semver": "^7.1.3",
 		"supports-color": "^7.1.0"
 	},
 	"peerDependencies": {
-		"hafas-client": "^4.0.0"
+		"hafas-client": "^5.0.0"
 	},
 	"devDependencies": {
-		"bvg-hafas": "^2.0.0"
+		"vbb-hafas": "^7.0.1"
 	}
 }

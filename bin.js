@@ -30,7 +30,7 @@ Options:
 	--interval      -i  Query interval in seconds. Default: 30
 	--show-stats    -s  Always show request stats.
 Examples:
-	monitor-hafas bvg-hafas departure stations 900000100001,900000100003
+	monitor-hafas vbb-hafas departure stations 900000100001,900000100003
 	monitor-hafas ./my-hafas-client.js departure,stopover stations --file stations.json
 	monitor-hafas some-package/my-hafas-client.js stopover,position bbox 52.6 13.3 52.3 13.6
 \n`)
