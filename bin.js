@@ -89,7 +89,7 @@ if (mode === 'stations') {
 
 const DATA_VERSION = semverMajor(pkg.version)
 let formatter = eventName => val => {
-	process.stdout.write(JSON.stringify([eventName, val, Date.now(), DATA_VERSION]) + '\n')
+	process.stdout.write(JSON.stringify([DATA_VERSION, eventName, val, Date.now()]) + '\n')
 }
 if (argv['pretty-print'] || argv.p) {
 	const colors = supportsColor.stdout

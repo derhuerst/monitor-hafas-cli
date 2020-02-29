@@ -32,6 +32,7 @@ npm init --yes
 npm install vbb-hafas@7
 echo 'const createHafas = require("vbb-hafas")' >>hafas.js
 echo 'const hafas = createHafas("vbb monitoring example")' >>hafas.js
+changes, 2.0.0
 echo 'module.exports = hafas' >>hafas.js
 
 # set up monitoring
@@ -39,9 +40,9 @@ events='departure'
 stations='900000100001,900000100003'
 
 # run monitor-hafas-cli using npx
-npx monitor-hafas-cli ./hafas.js $events stations $stations
+npx monitor-hafas-cli@2 ./hafas.js $events stations $stations
 # or install & run monitor-hafas-cli manually
-npm install monitor-hafas-cli
+npm install monitor-hafas-cli@2
 ./node_modules/.bin/monitor-hafas ./hafas.js $events stations $stations
 ```
 
