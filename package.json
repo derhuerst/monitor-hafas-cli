@@ -1,7 +1,7 @@
 {
 	"name": "monitor-hafas-cli",
 	"description": "Monitor any HAFAS endpoint from the command line.",
-	"version": "2.0.0",
+	"version": "2.0.1",
 	"bin": {
 		"monitor-hafas": "./bin.js"
 	},

@@ -38,7 +38,7 @@ Examples:
 }
 
 if (argv.version || argv.v) {
-	process.stdout.write(`parse-url v${pkg.version}\n`)
+	process.stdout.write(`monitor-hafas v${pkg.version}\n`)
 	process.exit(0)
 }
 
