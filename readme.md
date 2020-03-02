@@ -46,6 +46,8 @@ npm install monitor-hafas-cli@2
 ./node_modules/.bin/monitor-hafas ./hafas.js $events stations $stations
 ```
 
+Use [`record-hafas-data`](https://github.com/derhuerst/record-hafas-data) to store to record this data into a [LevelDB](http://leveldb.org).
+
 
 ## Usage
 
@@ -67,6 +69,16 @@ Examples:
 	monitor-hafas ./my-hafas-client.js departure,stopover stations --file stations.json
 	monitor-hafas some-package/my-hafas-client.js stopover,position bbox 52.6 13.3 52.3 13.6
 ```
+
+
+## Related
+
+- [`record-hafas-data`](https://github.com/derhuerst/record-hafas-data) – CLI tool to record data from [`monitor-hafas-cli`](https://github.com/derhuerst/monitor-hafas-cli) into a [LevelDB](http://leveldb.org).
+- [`hafas-monitor-trips`](https://github.com/derhuerst/hafas-monitor-trips) – Using a HAFAS endpoint, watch all trips in a bounding box.
+- [`hafas-monitor-departures`](https://github.com/derhuerst/hafas-monitor-departures) – Pass in a HAFAS client, fetch all departures at any set of stations.
+- [`hafas-gtfs-rt-feed`](https://github.com/derhuerst/hafas-gtfs-rt-feed) – Generate a [GTFS Realtime](https://developers.google.com/transit/gtfs-realtime/) feed by [monitoring](https://github.com/derhuerst/hafas-monitor-trips) a HAFAS endpoint.
+- [`observe-hafas-client`](https://github.com/derhuerst/observe-hafas-client) – Observe all departures/arrivals/etc. returned by `hafas-client`.
+- [`hafas-monitor-trips-server`](https://github.com/derhuerst/hafas-monitor-trips-server) – A server that manages HAFAS monitors.
 
 
 ## Contributing
