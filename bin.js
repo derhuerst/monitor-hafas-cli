@@ -86,6 +86,10 @@ if (mode === 'stations') {
 		east: parseFloat(argv._[6])
 	}, interval)
 } else showError('Invalid mode. Must be "stations" or "bbox".')
+monitor.on('error', (err) => {
+	console.error(err)
+	process.exitCode = 1
+})
 
 const DATA_VERSION = semverMajor(pkg.version)
 let formatter = eventName => val => {
