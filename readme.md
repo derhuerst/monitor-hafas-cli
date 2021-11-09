@@ -48,6 +48,8 @@ npm install monitor-hafas-cli@2
 
 Use [`record-hafas-data`](https://github.com/derhuerst/record-hafas-data) to store to record this data into a [LevelDB](http://leveldb.org).
 
+*Note:* If you want to monitor by bounding box (`bbox` mode), you need a running [Redis](https://redis.io) server.
+
 
 ## Usage
 

@@ -92,8 +92,8 @@ monitor.on('error', (err) => {
 })
 
 const DATA_VERSION = semverMajor(pkg.version)
-let formatter = eventName => val => {
-	process.stdout.write(JSON.stringify([DATA_VERSION, eventName, val, Date.now()]) + '\n')
+let formatter = eventName => (...vals) => {
+	process.stdout.write(JSON.stringify([DATA_VERSION, eventName, Date.now(), ...vals]) + '\n')
 }
 if (argv['pretty-print'] || argv.p) {
 	const colors = supportsColor.stdout
